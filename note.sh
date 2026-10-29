@@ -6,4 +6,8 @@ case "$1" in
     printf '%s' "$2" > "$DB/$hash"
     echo "Gespeichert: $hash"
     ;;
+      delete)
+    rm -f "$DB/$2"
+    echo "Gelöscht: $2"
+    ;;
 esac
