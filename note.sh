@@ -6,4 +6,10 @@ case "$1" in
     printf '%s' "$2" > "$DB/$hash"
     echo "Gespeichert: $hash"
     ;;
+    
+      list)
+    for f in "$DB"/*; do
+      [ -f "$f" ] && echo "$(basename "$f"): $(cat "$f")"
+    done
+    ;;
 esac
