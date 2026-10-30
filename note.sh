@@ -9,5 +9,10 @@ case "$1" in
       delete)
     rm -f "$DB/$2"
     echo "Gelöscht: $2"
+     ;;
+      list)
+    for f in "$DB"/*; do
+      [ -f "$f" ] && echo "$(basename "$f"): $(cat "$f")"
+    done
     ;;
 esac
