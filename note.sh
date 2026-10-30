@@ -6,7 +6,10 @@ case "$1" in
     printf '%s' "$2" > "$DB/$hash"
     echo "Gespeichert: $hash"
     ;;
-    
+      delete)
+    rm -f "$DB/$2"
+    echo "Gelöscht: $2"
+     ;;
       list)
     for f in "$DB"/*; do
       [ -f "$f" ] && echo "$(basename "$f"): $(cat "$f")"
